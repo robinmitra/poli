@@ -1,5 +1,6 @@
 #include <string>
 #include "node.h"
+#include "trie_iterator.h"
 
 namespace polidb {
 class Trie {
@@ -11,5 +12,7 @@ class Trie {
  public:
   void put(std::string key, std::string value);
   std::string get(const std::string &key);
+  TrieIterator begin();
+  TrieIterator end();
 };
 }

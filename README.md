@@ -4,8 +4,8 @@ An simple, experimental embeddable key-value store.
 ## Todo
 
 ### Operations
-- [ ] Put
-- [ ] Get
+- [x] Put
+- [x] Get
 - [ ] Delete
 - [ ] Iterate
 - [ ] Batch operations

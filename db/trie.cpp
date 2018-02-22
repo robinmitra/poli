@@ -1,5 +1,5 @@
-#include "trie.h"
 #include <iostream>
+#include "trie.h"
 
 namespace polidb {
 void Trie::put(std::string key, std::string value) {
@@ -9,7 +9,7 @@ void Trie::put(std::string key, std::string value) {
 Node Trie::put(Node node, std::string key, std::string value, int index) {
   const char currChar = key[index];
   // Match - set the value.
-  if (index==key.length() - 1) node.setValue(std::move(value));
+  if (index==key.length()) node.setValue(std::move(value));
   else {
     std::unordered_map<char, Node> &nextMap = node.getNext();
     auto search = nextMap.find(currChar);
@@ -26,7 +26,7 @@ std::string Trie::get(const std::string &key) {
 }
 
 Node Trie::get(Node node, std::string key, int index) {
-  if (index==key.length() - 1) {
+  if (index==key.length()) {
     return node;
   } else {
     const char currChar = key[index];
@@ -35,5 +35,13 @@ Node Trie::get(Node node, std::string key, int index) {
     if (search==nextMap.end()) return Node();
     return get(nextMap[currChar], key, index + 1);
   }
+}
+
+TrieIterator Trie::begin() {
+  return TrieIterator(root);
+}
+
+TrieIterator Trie::end() {
+  return TrieIterator();
 }
 }

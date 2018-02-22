@@ -1,3 +1,6 @@
+#ifndef POLIDB_NODE_H
+#define POLIDB_NODE_H
+
 #include <string>
 #include <unordered_map>
 
@@ -9,6 +12,8 @@ class Node {
  public:
   void setValue(std::string value);
   std::string getValue();
-  std::unordered_map<char, Node> & getNext();
+  std::unordered_map<char, Node> &getNext();
 };
 }
+
+#endif

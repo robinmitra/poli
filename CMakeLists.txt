@@ -10,4 +10,6 @@ add_executable(polidb
         db/node.h
         db/trie.cpp
         db/trie.h
-        includes/db.h)
+        includes/db.h
+        db/trie_iterator.h
+        db/trie_iterator.cpp)

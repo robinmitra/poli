@@ -1,5 +1,4 @@
 #include <string>
-#include <vector>
 #include "../db/trie.h"
 
 namespace polidb {
@@ -11,5 +10,6 @@ class Db {
  public:
   bool put(std::string key, std::string value);
   std::string get(std::string key);
+  Trie getKeysIterator();
 };
 }

@@ -4,17 +4,23 @@
 using namespace polidb;
 
 int main() {
-  // Instantiate
+  // Instantiate.
   Db db;
 
-  // Put key-value pairs
+  // Put key-value pairs.
   db.put("name", "Robin");
+  db.put("place", "London");
+  db.put("language-1", "C++");
+  db.put("language-2", "JS");
+  db.put("never", "true");
+  db.put("", "bad value");
+  db.put("language-3", "PHP");
 
-  // Get key-value pairs
-  std::string name = db.get("name");
-  std::cout << name;
-
-  // Iterate through key-value pairs
+  // Iterate through keys and get value for each.
+  Trie keysIterator = db.getKeysIterator();
+  for (const auto &key : keysIterator) {
+    std::cout << "Key: " << key << ", value: " << db.get(key) << std::endl;
+  }
 
   return 0;
 }
