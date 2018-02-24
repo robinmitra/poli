@@ -28,5 +28,9 @@
 
 # Executables
 *.exe
-*.out
+*.out*
 *.app
+
+# Editor-specific
+.vscode
+.idea

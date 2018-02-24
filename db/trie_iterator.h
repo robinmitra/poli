@@ -9,20 +9,19 @@ namespace polidb {
 class TrieIterator {
  public:
   TrieIterator();
-  explicit TrieIterator(Node node);
+  explicit TrieIterator(const Node &node);
 
-  std::string &operator*();
-
+  // Operator overloads.
+  std::string operator*() const;
   TrieIterator operator++();
   TrieIterator operator++(int);
-
-  bool operator==(const TrieIterator &rhs);
-  bool operator!=(const TrieIterator &rhs);
+  bool operator==(const TrieIterator &rhs) const;
+  bool operator!=(const TrieIterator &rhs) const;
 
  private:
   int iterator_position = 0;
   std::vector<std::string> keys;
-  void collect(Node node, const std::string &prefix = "");
+  void collect(const Node &node, const std::string &prefix = "");
 };
 }
 

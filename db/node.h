@@ -6,14 +6,15 @@
 
 namespace polidb {
 class Node {
+ public:
+  void setValue(const std::string &value);
+  std::string getValue() const;
+  const std::unordered_map<char, Node> &getNext() const;
+  void setNextNode(const char &nodeKey, const Node &node);
  private:
   std::string value;
   std::unordered_map<char, Node> next;
- public:
-  void setValue(std::string value);
-  std::string getValue();
-  std::unordered_map<char, Node> &getNext();
 };
 }
 
-#endif
+#endif // POLIDB_NODE_H

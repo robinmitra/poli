@@ -2,18 +2,17 @@
 #include "../includes/db.h"
 
 namespace polidb {
-bool Db::put(std::string key, std::string value) {
+bool Db::put(const std::string &key, const std::string &value) {
   if (!key.length()) return false;
-  trie.put(std::move(key), std::move(value));
+  trie.put(key, value);
   return true;
 }
 
-std::string Db::get(std::string key) {
+std::string Db::get(const std::string &key) const {
   return trie.get(key);
 }
 
-Trie Db::getKeysIterator() {
+Trie Db::getKeysIterator() const {
   return trie;
 }
-
 }
