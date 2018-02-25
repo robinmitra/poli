@@ -7,7 +7,7 @@ An simple, experimental embeddable key-value store.
 - [x] Put
 - [x] Get
 - [x] Delete
-- [ ] Iterate
+- [x] Iterate
 - [ ] Batch operations
 
 ### Features
