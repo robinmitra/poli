@@ -10,12 +10,14 @@ class Trie {
  public:
   void put(const std::string &key, const std::string &value);
   std::string get(const std::string &key) const;
+  void remove(const std::string &key);
   TrieIterator begin() const;
   TrieIterator end() const;
  private:
   Node root;
-  Node put(Node node, const std::string &key, const std::string &value, const int &index);
+  Node put(Node &node, const std::string &key, const std::string &value, const int &index);
   Node get(const Node &node, const std::string &key, const int &index) const;
+  Node remove(Node &node, const std::string &key, const int &index);
 };
 }
 

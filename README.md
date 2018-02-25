@@ -6,15 +6,15 @@ An simple, experimental embeddable key-value store.
 ### Operations
 - [x] Put
 - [x] Get
-- [ ] Delete
+- [x] Delete
 - [ ] Iterate
 - [ ] Batch operations
 
 ### Features
 - [ ] Persist to filesystem
-- [ ] Background daemon
 - [ ] Multiple stores 
 - [ ] Arbitrary data storage (currently, only string values are allowed)
+- [ ] Background daemon
 - [ ] Atomic batch transactions
 - [ ] Backup and restore (and potentially snapshots?)
 - [ ] Configuration

@@ -15,6 +15,10 @@ int main() {
   db.put("never", "true");
   db.put("", "bad value");
   db.put("language-3", "PHP");
+  db.put("language-4", "Java");
+
+  db.remove("name");
+  db.remove("language-4");
 
   // Iterate through keys and get value for each.
   Trie keysIterator = db.getKeysIterator();
